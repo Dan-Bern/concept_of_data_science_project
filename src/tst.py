@@ -36,6 +36,7 @@ class TSTNode:
 class TernarySearchTree:
     """
     Ternary Search Tree with insert, search, and autocomplete methods.
+    
     """
 
     def __init__(self):
@@ -47,16 +48,27 @@ class TernarySearchTree:
             self.root = self._insert(self.root, word, 0)
 
     def _insert(self, node: Optional[TSTNode], word: str, index: int) -> TSTNode:
-        char = word[index]
+        """Recursive helper for inserting a word into the TST.
+        
+        Args:
+            node (Optional[TSTNode]): The current node in the tree.
+            word (str): The word being inserted.
+            index (int): The current character index of the word.
 
+        Returns:
+            TSTNode: The updated node after insertion.
+        """
+        char = word[index]
+                          # If the current node is None, create a new one with the current character
         if node is None:
             node = TSTNode(char)
 
-        if char < node.char:
+        if char < node.char:       # Recur on the left subtree if character is smaller
             node.left = self._insert(node.left, word, index)
         elif char > node.char:
-            node.right = self._insert(node.right, word, index)
-        else:
+            node.right = self._insert(node.right, word, index) # Recur on the right subtree if character is larger
+
+        else:                 # If this is the last character, mark end of word
             if index + 1 < len(word):
                 node.eq = self._insert(node.eq, word, index + 1)
             else:
