@@ -77,23 +77,34 @@ class TernarySearchTree:
         return node
 
     def search(self, word: str) -> bool:
-        """Search for a full word in the TST."""
+        """Search for a full word in the TST.
+        
+        Returns:
+        bool: True if the word exists, False otherwise.
+        """
         return self._search(self.root, word, 0)
 
     def _search(self, node: Optional[TSTNode], word: str, index: int) -> bool:
+        """
+    Recursive helper to search for a word in the TST.
+
+    Returns:
+        bool: True if found, False otherwise.
+    """
+        
         if node is None or not word:
             return False
 
         char = word[index]
 
         if char < node.char:
-            return self._search(node.left, word, index)
+            return self._search(node.left, word, index)  # Go left if char is smaller
         elif char > node.char:
-            return self._search(node.right, word, index)
+            return self._search(node.right, word, index)  # Go right if char is larger
         else:
             if index == len(word) - 1:
-                return node.is_end_of_string
-            return self._search(node.eq, word, index + 1)
+                return node.is_end_of_string              # Check for word end
+            return self._search(node.eq, word, index + 1) # Go middle if chars match
 
     def autocomplete(self, prefix: str) -> List[str]:
         """
