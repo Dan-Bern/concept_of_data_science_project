@@ -10,7 +10,19 @@ from typing import Optional, List
 
 class TSTNode:
     """
-    Node of a Ternary Search Tree.
+    Represents a node in a Ternary Search Tree (TST).
+
+    Each node stores a single character and has up to three child nodes:
+      - left: points to nodes with characters less than this node's character.
+      - eq: points to nodes with the next character in the string (i.e., equal character).
+      - right: points to nodes with characters greater than this node's character.
+
+    Attributes:
+        char (str): The character stored in this node.
+        is_end_of_string (bool): Flag indicating whether this node marks the end of a valid string.
+        left (Optional[TSTNode]): Left child node (less than `char`).
+        eq (Optional[TSTNode]): Middle child node (equal to `char`).
+        right (Optional[TSTNode]): Right child node (greater than `char`).
     """
 
     def __init__(self, char: str):
