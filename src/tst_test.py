@@ -4,7 +4,11 @@ from tst import TernarySearchTree
 
 
 def load_words_from_file(relative_path: str) -> list[str]:
-    """Helper function to load words from a file relative to this test file, one per line."""
+    """Helper function to load words from a file relative to this test file, one per line.
+    
+    Returns:
+        list[str]: A list of non-empty stripped lines.
+    """
     base_dir = os.path.dirname(__file__)
     filepath = os.path.join(base_dir, relative_path)
     with open(filepath, "r") as file:
@@ -12,15 +16,20 @@ def load_words_from_file(relative_path: str) -> list[str]:
 
 
 class TestTernarySearchTree(unittest.TestCase):
-
+    """
+    Unit tests for the TernarySearchTree class.
+    """
     def setUp(self):
+        """
+        Set up test environment with a populated TST and test word lists.
+        """
         self.tst = TernarySearchTree()
         self.words = load_words_from_file(os.path.join("data", "insert_words.txt"))
         self.non_existing = load_words_from_file(
             os.path.join("data", "not_insert_words.txt")
         )
 
-        for word in self.words:
+        for word in self.words:    # Insert test words into the tree
             self.tst.insert(word)
 
     def test_insert_and_search_existing_words(self):
