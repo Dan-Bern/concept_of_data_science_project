@@ -109,13 +109,16 @@ class TernarySearchTree:
     def autocomplete(self, prefix: str) -> List[str]:
         """
         Return all words in the TST that start with the given prefix.
+        
+        Returns:
+        List[str]: A list of all matching words.
         """
         results: List[str] = []
         node = self._get_node(self.root, prefix, 0)
         if node:
             if node.is_end_of_string:
-                results.append(prefix)
-            self._collect(node.eq, prefix, results)
+                results.append(prefix)  # Add the prefix itself if it's a complete word
+            self._collect(node.eq, prefix, results) # Collect all suffixes from here
         return results
 
     def _get_node(
