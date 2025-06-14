@@ -1,27 +1,27 @@
-#!/bin/bash
-#SBATCH --job-name=run_tst_tests
-#SBATCH --output=logs/output_%j.log
-#SBATCH --error=logs/error_%j.log
+#!/bin/bash -l
+#SBATCH --job-name=run_performance
+#SBATCH --output=logs/performance_%j.out
+#SBATCH --error=logs/performance_%j.err
 #SBATCH --time=00:10:00
 #SBATCH --mem=4G
 #SBATCH --cpus-per-task=2
-#SBATCH -M genius
-#SBATCH -A lp_h_ds_students
+#SBATCH --account=lp_h_ds_students
+#SBATCH --cluster=genius
 
-# Load Python
+# Load necessary modules
+module purge
 module load cluster/genius/batch
-module load FFC/2019.1.0.post0-foss-2022a-Python-3.10.4
+module load Python/3.12.3-GCCcore-13.3.0
 
+# Activate your virtual environment
+source ~/venvs/cds_proj_env/bin/activate
 
-# Go to project directory
+# Go to the directory with performance.py
 cd ~/concept_of_data_science_project/src
 
-# Confirm location and Python version
-echo "Running on $(hostname)"
-echo "SLURM_JOB_ID: $SLURM_JOB_ID"
-echo "Date: $(date)"
+which python
 python --version
+pip list | grep BTrees
 
-# Run tests and performance
-python -m unittest tst_test.py
-python performance.py 
+# Run the script
+python3 performance.py
