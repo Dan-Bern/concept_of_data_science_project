@@ -4,7 +4,7 @@
 
 Hasselt University 1st Year Master of Statistics and Data Science 
 
-Contributors: Edwin Dzoro Mwazuma (2469499) and Danile Bernard (2469288) 
+Contributors: Edwin Dzoro Mwazuma (2469499) and Daniel Benard (2469288) 
 
 ## Project Overview
 This project implements a Ternary Search Tree (TST) in Python, a data structure that combines the efficiency of a binary search tree with the ability to store and retrieve strings efficiently. TSTs are especially useful in applications involving auto-completion, spell checking, and dictionary word searches.
