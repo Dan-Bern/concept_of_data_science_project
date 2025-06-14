@@ -2,7 +2,7 @@ import time
 import random
 from tst import TernarySearchTree
 from btree import BTreeWrapper  
-
+import matplotlib.pyplot as plt
 
 def load_words(filepath: str, limit: int = None) -> list[str]:
     """Load words from a text file"""
@@ -54,4 +54,24 @@ if __name__ == "__main__":
     print("\nBenchmarking B-Tree...")
     sizes_bt, insert_bt, search_bt = benchmark_tree(BTreeWrapper, words)
 
-    # Optionally add matplotlib plotting here
+    # plotting graphs after benchmarking
+    " Benchmarking plot for insert"
+    plt.plot(sizes_tst, insert_tst, label='TST Insert')
+    plt.plot(sizes_bt, insert_bt, label='BTree Insert')
+    plt.title('Benchmarking plot - Time for insert vs Number of words')
+    plt.xlabel('Number of words')
+    plt.ylabel('Time (s)')
+    plt.grid(True)
+    plt.legend()
+    plt.savefig('insert_benchmark.png')  
+    plt.clf()
+
+    " Benchmarking plot for search"    
+    plt.plot(sizes_tst, search_tst, label='TST Insert')
+    plt.plot(sizes_bt, search_bt, label='BTree Insert')
+    plt.title('Benchmarking plot - Time for search vs Number of words')
+    plt.xlabel('Number of words')
+    plt.ylabel('Time (s)')
+    plt.legend()
+    plt.grid(True)
+    plt.savefig('search_benchmark.png')
