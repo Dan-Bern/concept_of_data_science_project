@@ -1,6 +1,6 @@
-#Concepts of Data Science Project
+# Concepts of Data Science Project
 
-##Tenary search tree implementation  
+## Tenary search tree implementation  
 
 Hasselt University 1st Year Master of Statistics and Data Science 
 
