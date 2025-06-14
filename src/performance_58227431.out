@@ -1,0 +1,39 @@
+SLURM_JOB_ID: 58227431
+SLURM_JOB_USER: vsc37525
+SLURM_JOB_ACCOUNT: lp_h_ds_students
+SLURM_JOB_NAME: run_performance
+SLURM_CLUSTER_NAME: genius
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: r25i27n01
+SLURM_JOB_CPUS_PER_NODE: 2
+Date: Sat Jun 14 14:29:00 CEST 2025
+Walltime: 00-00:10:00
+========================================================================
+/user/leuven/375/vsc37525/venvs/cds_proj_env/bin/python
+Python 3.12.3
+BTrees              6.1
+
+Benchmarking Ternary Search Tree (TST)...
+TernarySearchTree: 1000 words - Insert: 0.0044s, Search: 0.0003s
+TernarySearchTree: 2000 words - Insert: 0.0080s, Search: 0.0007s
+TernarySearchTree: 3000 words - Insert: 0.0140s, Search: 0.0012s
+TernarySearchTree: 4000 words - Insert: 0.0183s, Search: 0.0017s
+TernarySearchTree: 5000 words - Insert: 0.0228s, Search: 0.0021s
+TernarySearchTree: 6000 words - Insert: 0.0264s, Search: 0.0025s
+TernarySearchTree: 7000 words - Insert: 0.0310s, Search: 0.0029s
+TernarySearchTree: 8000 words - Insert: 0.0499s, Search: 0.0032s
+TernarySearchTree: 9000 words - Insert: 0.0407s, Search: 0.0037s
+TernarySearchTree: 10000 words - Insert: 0.0463s, Search: 0.0042s
+
+Benchmarking B-Tree...
+BTreeWrapper: 1000 words - Insert: 0.0003s, Search: 0.0000s
+BTreeWrapper: 2000 words - Insert: 0.0006s, Search: 0.0001s
+BTreeWrapper: 3000 words - Insert: 0.0010s, Search: 0.0001s
+BTreeWrapper: 4000 words - Insert: 0.0013s, Search: 0.0002s
+BTreeWrapper: 5000 words - Insert: 0.0017s, Search: 0.0002s
+BTreeWrapper: 6000 words - Insert: 0.0020s, Search: 0.0003s
+BTreeWrapper: 7000 words - Insert: 0.0024s, Search: 0.0003s
+BTreeWrapper: 8000 words - Insert: 0.0028s, Search: 0.0004s
+BTreeWrapper: 9000 words - Insert: 0.0032s, Search: 0.0005s
+BTreeWrapper: 10000 words - Insert: 0.0036s, Search: 0.0005s
