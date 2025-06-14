@@ -4,7 +4,7 @@
 
 Hasselt University 1st Year Master of Statistics and Data Science 
 
-Contributors: Edwin Dzoro Mwazuma (2469499) and Danile Bernard 
+Contributors: Edwin Dzoro Mwazuma (2469499) and Danile Bernard (2469288) 
 
 ## Project Overview
 This project implements a Ternary Search Tree (TST) in Python, a data structure that combines the efficiency of a binary search tree with the ability to store and retrieve strings efficiently. TSTs are especially useful in applications involving auto-completion, spell checking, and dictionary word searches.
@@ -20,7 +20,7 @@ Performance Comparison: Includes benchmarking against a B-tree implementation us
 The script used to run is available under the file name project_script.slurm
 
 ## Benchmarking
-We benchmark the TST's performance on insertion and search operations across increasing word volumes and compare it with a B-Tree wrapper to analyze time complexity trends.
+We benchmark the TST's performance on insertion and search operations across increasing word volumes and compare it with a B-Tree wrapper to analyze time complexity trends. This was done in the HPC infrastructure and the output file is under the file name output_58226673.log.
 
 ## Dependencies
 Python 3.10.4
