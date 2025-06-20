@@ -28,7 +28,7 @@ Python 3.10.4
 ## Conclusion
 The benchmarking results showed that the Ternary Search Tree (TST), while functional and capable of handling increasing volumes of data, is significantly slower than the B-Tree implementation in both insertion and search operations.
 
-TST Performance: Insertion time increased approximately linearly with the number of words, reaching ~0.10 seconds for 10,000 words. Search times also grew steadily but remained under 0.01 seconds.
+TST Performance: Insertion time increased approximately linearly with the number of words, reaching ~0.10 seconds for 10,000 words. Search times also grew steadily, though remained under 0.01 seconds.
 
 B-Tree Performance: Insertion and search times remained extremely low throughout, with insertion times under 0.005 seconds and search times nearly constant below 0.0006 seconds even at 10,000 words.
 
