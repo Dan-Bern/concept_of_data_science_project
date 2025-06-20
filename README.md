@@ -1,6 +1,6 @@
 # Concepts of Data Science Project
 
-## Tenary search tree implementation  
+## Ternary search tree implementation  
 
 Hasselt University 1st Year Master of Statistics and Data Science 
 
@@ -20,7 +20,7 @@ Performance Comparison: Includes benchmarking against a B-tree implementation us
 The script used to run is available under the file name project_script.slurm
 
 ## Benchmarking
-We benchmark the TST's performance on insertion and search operations across increasing word volumes and compare it with a B-Tree wrapper to analyze time complexity trends. This was done in the HPC infrastructure and the output file is under the file name performance_58227431.out.
+We benchmark the TST's performance on insertion and search operations across increasing word volumes and compare it with a B-Tree wrapper to analyse time complexity trends. This was done in the HPC infrastructure, and the output file is under the file name performance_58227431.out.
 
 ## Dependencies
 Python 3.10.4
